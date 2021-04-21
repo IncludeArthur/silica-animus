@@ -1,0 +1,14 @@
+message_id: 746747294438916170
+
+mandatory_roles:
+  ps2_logo: planetside
+  squad_logo: squad
+  
+roles:
+  eft_logo: tarkov
+  minecraft_logo: minecraft
+  gta_logo: gta
+  swtor: swtor
+
+welcome_message: please state your business
+followup_message: An @deleted-role will be with you as soon as possible
