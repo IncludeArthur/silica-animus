@@ -32,15 +32,18 @@ async def manage_reaction(payload):
     if payload.message_id != watched_message:
         return # Reaction is not on the selection message
 
-    guild = client.get_guild(payload.guild_id)
-    member = guild.get_member(payload.user_id)
+    guild = await client.fetch_guild(payload.guild_id)
+    member = await guild.fetch_member(payload.user_id)
 
-    message = await guild.get_channel(payload.channel_id).fetch_message(payload.message_id)
+    #print(payload.channel_id)
+    #print(guild.name)
+    print(member.name + ' ' + str(member.id))
+    message = await client.get_channel(payload.channel_id).fetch_message(payload.message_id)
     emoji = payload.emoji.name
 
     if (not emoji in role_dict) and (not emoji in mandatory_role_dict):
         print("unknown emoji")
-        await message.remove_reaction(payload.emoji, payload.member)
+        await message.clear_reaction(payload.emoji)
         return
 
     if payload.event_type == "REACTION_ADD":
@@ -86,5 +89,5 @@ async def on_member_join(member):
         if channel.name == 'sanctuary':
             await channel.send(member.mention + ' ' + welcome_message)
             await channel.send(followup_message)
-    
+
 client.run(api_key)
