@@ -2,13 +2,12 @@ message_id: 746747294438916170
 
 mandatory_roles:
   ps2_logo: planetside
-  squad_logo: squad
   
 roles:
+  squad_logo: squad
   eft_logo: tarkov
-  minecraft_logo: minecraft
-  gta_logo: gta
-  swtor: swtor
+  warthunder_logo: warthunder
+  starcitizen_logo: starcitizen
 
 welcome_message: please state your business
 followup_message: An <@&712756833957183518> will be with you as soon as possible

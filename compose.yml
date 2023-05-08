@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  silica-animus: 
+    container_name: silica-animus
+    hostname: silica-animus 
+    image: silica-animus
+    volumes: 
+      - /home/wheatley/Projects/silica-animus/config.yml:/app/config.yml
+      - /home/wheatley/Projects/silica-animus/key.txt:/app/key.txt
+
+    restart: unless-stopped

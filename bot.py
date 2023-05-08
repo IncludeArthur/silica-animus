@@ -3,7 +3,8 @@ import yaml
 import os
 import sys
 
-client = discord.Client()
+intents = discord.Intents.all()
+client = discord.Client(intents=intents)
 
 f = open("key.txt", "r")
 api_key = f.read()
